@@ -24,4 +24,9 @@ public class HomeController {
     public String home1() {
         return "index_1";
     }
+    
+    
+    
+    
+    // donc c'est ici qu'on va travailler
 }
