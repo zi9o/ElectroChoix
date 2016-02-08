@@ -6,16 +6,8 @@
 package com.ecommerce.entities;
 
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import java.util.List;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
@@ -58,7 +50,7 @@ public class Commande {
     
     @ManyToOne
     @JoinColumn(name="ID_CLIENT")
-        private Client idClient;
+    private Client idClient;
 
     public Date getdATEcommande() {
         return dATEcommande;
@@ -75,9 +67,19 @@ public class Commande {
     public void setIdClient(Client idClient) {
         this.idClient = idClient;
     }
-    
-    
-    
+//////
+    @OneToMany(mappedBy = "commande")
+    private List<CommandeProduit> produits;
+
+    @Transient
+    public List<CommandeProduit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(List<CommandeProduit> produits) {
+        this.produits = produits;
+    }
+//////
     public Commande() {
     }
 

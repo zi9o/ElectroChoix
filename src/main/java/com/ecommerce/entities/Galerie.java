@@ -5,12 +5,7 @@
  */
 package com.ecommerce.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
@@ -33,7 +28,23 @@ public class Galerie {
     private String image;
     
     @Column(name = "STATUT_DB")
-    private Integer statutDb;    
+    private Integer statutDb;
+
+     /*  08-02-2016-16:00  */
+
+    @ManyToOne
+    @JoinColumn(name="ID_PRODUIT")
+    private Produit produit;
+
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
+    }
+
+    /*  08-02-2016-16:00  */
 
     public Galerie() {
     }
