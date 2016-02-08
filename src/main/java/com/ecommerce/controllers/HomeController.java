@@ -24,4 +24,9 @@ public class HomeController {
     public String admin() {
         return "Admin/index";
     }
+    
+    
+    
+    
+    // donc c'est ici qu'on va travailler
 }
