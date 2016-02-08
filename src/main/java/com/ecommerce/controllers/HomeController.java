@@ -17,7 +17,7 @@ public class HomeController {
 
     @RequestMapping("/home")
     public String home() {
-        return "redirect:/home1";
+        return "index";
     }
 
     @RequestMapping("/home1")
