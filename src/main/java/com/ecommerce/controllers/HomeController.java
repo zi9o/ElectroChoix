@@ -17,11 +17,11 @@ public class HomeController {
 
     @RequestMapping("/home")
     public String home() {
-        return "index";
+        return "homeAdmin";
     }
 
-    @RequestMapping("/home1")
-    public String home1() {
-        return "index_1";
+    @RequestMapping("/admin")
+    public String admin() {
+        return "Admin/index";
     }
 }
