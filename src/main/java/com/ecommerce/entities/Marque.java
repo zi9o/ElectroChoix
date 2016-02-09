@@ -5,15 +5,9 @@
  */
 package com.ecommerce.entities;
 
+import java.util.Date;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
@@ -37,27 +31,60 @@ public class Marque {
     private Integer statutDb;
     
     @OneToMany(mappedBy = "marque")
-    private List <Produit> produitList;       
+    private List <Produit> produits;
 
-    public Integer getIdMarque() {
+
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
+    public Integer getMarqueId() {
         return idMarque;
     }
        
     public void setIdMarque(Integer idMarque) {
         this.idMarque = idMarque;
     }
-    
+
     @Transient
-    public List<Produit> getProduitList() {
-        return produitList;
+    public List <Produit> getProduits() {
+        return produits;
     }
 
-    
+    public void setProduits(List <Produit> produits) {
+        this.produits = produits;
+    }
+
+    /* 08-02-2016-16:00  */
+
+/*  08-02-2016-16:00  */
     
     public Marque() {
     }
 
-        public Marque(Integer idMarque) {
+    public Marque(Integer idMarque) {
         this.idMarque = idMarque;
     }
         

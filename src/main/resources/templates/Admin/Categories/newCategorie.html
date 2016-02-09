@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html"
+      layout:decorator="templateAdmin">
+
+<head>
+    <title>Accueil</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h3 class="page-title"> Catégories
+        <small>Ajout</small>
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="icon-home"></i>
+                <a th:href="@{/home}">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <i class="icon-home"></i>
+                <a th:href="@{/categorie-management/categories}">Catégories</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <span>Ajout d'une catégorie</span>
+            </li>
+        </ul>
+
+    </div>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+
+    </div>
+    <div class="clearfix"></div>
+
+
+</div>
+</body>
+</html>

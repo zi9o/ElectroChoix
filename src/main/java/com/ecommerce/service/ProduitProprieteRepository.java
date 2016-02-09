@@ -5,19 +5,17 @@
  */
 package com.ecommerce.service;
 
-import com.ecommerce.entities.Task;
-import java.util.List;
- 
+import com.ecommerce.entities.ProduitPropriete;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
- 
+
+/**
+ *
+ * @author nawalti
+ */
+
 @RepositoryRestResource
-public interface TaskRepository extends CrudRepository<Task, Integer> {
+public interface ProduitProprieteRepository extends CrudRepository<ProduitPropriete, Integer> {
  
-    List<Task> findByTaskArchived(@Param("archivedfalse") int taskArchivedFalse);
-    List<Task> findByTaskStatus(@Param("status") String taskStatus);
- 
+    
 }
-
-
