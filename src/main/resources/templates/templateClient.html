@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
+Version: 4.5.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="fr" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="fr" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!--  Each token will be replaced by their respective titles in the resulting page. -->
+    <title>Electro-choix</title>
+
+    <link th:replace="fragments/Client/style" />
+
+
+
+
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
+<div th:replace="fragments/Client/header"></div>
+
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN CONTENT -->
+
+
+        <div layout:fragment="content"></div>
+
+
+    <!-- END CONTENT -->
+
+</div>
+<!-- END CONTAINER -->
+
+
+<!-- BEGIN FOOTER -->
+<div th:replace="fragments/Client/footer"></div>
+
+<div th:replace="fragments/Client/js"></div>
+<!-- END FOOTER -->
+
+</body>
+
+</html>
