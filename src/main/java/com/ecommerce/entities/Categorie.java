@@ -5,15 +5,12 @@
  */
 package com.ecommerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.util.Date;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -30,7 +27,8 @@ public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) 
     @Column(name = "ID_CATEGORIE")
-    private Integer idCategorie;
+    @JsonInclude
+    private Integer id;
     @Size(max = 50)
     
     @Column(name = "LIBELLE")
@@ -42,12 +40,53 @@ public class Categorie {
     
     @Column(name = "STATUT_DB")
     private Integer statutDb;
-    
+
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
+
+    // recuperation de l'id
+    @JsonGetter
+    public Integer getCategorieId() {
+        return id;
+    }
+
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+
     @OneToMany(mappedBy = "categorie")
     private List<Produit> produits;
     
     @OneToMany(mappedBy = "categorie")
     private List<Propriete> proprietes;
+
 
     @Transient
     public List<Propriete> getProprietes() {
@@ -62,7 +101,7 @@ public class Categorie {
     }
 
     public Categorie(Integer idCategorie) {
-        this.idCategorie = idCategorie;
+        this.id = idCategorie;
     }
 
     @Transient
@@ -74,13 +113,7 @@ public class Categorie {
         this.produits = produits;
     }
 
-    public Integer getIdCategorie() {
-        return idCategorie;
-    }
 
-    public void setIdCategorie(Integer idCategorie) {
-        this.idCategorie = idCategorie;
-    }
 
     public String getLibelle() {
         return libelle;
@@ -108,7 +141,7 @@ public class Categorie {
     
     @Override
     public String toString() {
-        return "entities.Categorie[ idCategorie=" + idCategorie + " ]";
+        return "entities.Categorie[ idCategorie=" + id + " ]";
     }
     
 }

@@ -5,15 +5,9 @@
  */
 package com.ecommerce.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  *
@@ -48,7 +42,32 @@ public class Propriete {
         this.categorie = categorie;
     }
 
-    
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
 
     public Propriete() {
     }
@@ -57,7 +76,7 @@ public class Propriete {
         this.idPropriete = idPropriete;
     }
 
-    public Integer getIdPropriete() {
+    public Integer getProprieteId() {
         return idPropriete;
     }
 

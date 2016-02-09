@@ -5,15 +5,9 @@
  */
 package com.ecommerce.entities;
 
+import java.util.Date;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
@@ -66,11 +60,38 @@ public class Client {
     
     @Column(name = "STATUT_DB")
     private Integer statutDb;
+
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
     
     @OneToMany(mappedBy = "idClient")
     private List <Commande> commandeList;       
 
-    public Integer getIdClient() {
+    public Integer getClientId() {
         return idClient;
     }
        
