@@ -5,15 +5,9 @@
  */
 package com.ecommerce.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  *
@@ -58,6 +52,36 @@ public class Produit {
     @JoinColumn(name="ID_MARQUE")
     private Marque marque;
 
+    /* 08-02-2016-16:00  */
+
+    @OneToMany(mappedBy = "produit")
+    private List<Galerie> galeries;
+
+    @Transient
+    public List<Galerie> getGaleries() {
+        return galeries;
+    }
+
+    public void setGaleries(List<Galerie> galeries) {
+        this.galeries = galeries;
+    }
+
+    @OneToMany(mappedBy = "produit")
+    private List<ProduitPropriete> proprietes;
+
+    @Transient
+    public List<ProduitPropriete> getProprietes() {
+        return proprietes;
+    }
+
+    public void setProprietes(List<ProduitPropriete> proprietes) {
+        this.proprietes = proprietes;
+    }
+
+
+    /*  08-02-2016-16:00  */
+
+    //@Transient
     public Marque getMarque() {
         return marque;
     }
@@ -71,6 +95,7 @@ public class Produit {
     public Produit() {
     }
 
+    //@Transient
     public Categorie getCategorie() {
         return categorie;
     }

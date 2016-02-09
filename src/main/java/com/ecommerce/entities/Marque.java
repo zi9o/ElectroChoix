@@ -37,7 +37,7 @@ public class Marque {
     private Integer statutDb;
     
     @OneToMany(mappedBy = "marque")
-    private List <Produit> produitList;       
+    private List <Produit> produits;
 
     public Integer getIdMarque() {
         return idMarque;
@@ -46,18 +46,24 @@ public class Marque {
     public void setIdMarque(Integer idMarque) {
         this.idMarque = idMarque;
     }
-    
+
     @Transient
-    public List<Produit> getProduitList() {
-        return produitList;
+    public List <Produit> getProduits() {
+        return produits;
     }
 
-    
+    public void setProduits(List <Produit> produits) {
+        this.produits = produits;
+    }
+
+    /* 08-02-2016-16:00  */
+
+/*  08-02-2016-16:00  */
     
     public Marque() {
     }
 
-        public Marque(Integer idMarque) {
+    public Marque(Integer idMarque) {
         this.idMarque = idMarque;
     }
         

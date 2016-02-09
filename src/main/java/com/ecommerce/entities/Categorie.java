@@ -44,20 +44,20 @@ public class Categorie {
     private Integer statutDb;
     
     @OneToMany(mappedBy = "categorie")
-    private List<Produit> produitList;
+    private List<Produit> produits;
     
     @OneToMany(mappedBy = "categorie")
-    private List<Propriete> proprieteList;
+    private List<Propriete> proprietes;
 
     @Transient
-    public List<Propriete> getProprieteList() {
-        return proprieteList;
+    public List<Propriete> getProprietes() {
+        return proprietes;
     }
 
-    public void setProprieteList(List<Propriete> proprieteList) {
-        this.proprieteList = proprieteList;
+    public void setProprietes(List<Propriete> proprietes) {
+        this.proprietes = proprietes;
     }
-    
+
     public Categorie() {
     }
 
@@ -66,12 +66,12 @@ public class Categorie {
     }
 
     @Transient
-    public List<Produit> getProduitList() {
-        return produitList;
+    public List<Produit> getProduits() {
+        return produits;
     }
 
-    public void setProduitList(List<Produit> produitList) {
-        this.produitList = produitList;
+    public void setProduits(List<Produit> produits) {
+        this.produits = produits;
     }
 
     public Integer getIdCategorie() {
