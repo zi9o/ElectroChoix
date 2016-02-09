@@ -7,6 +7,7 @@ package com.ecommerce.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -90,7 +91,32 @@ public class Produit {
         this.marque = marque;
     }
 
-    
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
     
     public Produit() {
     }
@@ -108,7 +134,7 @@ public class Produit {
         this.idProduit = idProduit;
     }
 
-    public Integer getIdProduit() {
+    public Integer getProduitId() {
         return idProduit;
     }
 

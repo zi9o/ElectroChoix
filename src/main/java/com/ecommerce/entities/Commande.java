@@ -5,6 +5,9 @@
  */
 package com.ecommerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -30,6 +33,33 @@ public class Commande {
     @Column(name = "DATE_commande")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dATEcommande;
+
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
     
     @Column(name = "MONTANT_TOTAL")
     private Float montantTotal;
@@ -87,7 +117,7 @@ public class Commande {
         this.idCommande = idCommande;
     }
 
-    public Integer getIdCommande() {
+    public Integer getCommandeId() {
         return idCommande;
     }
 

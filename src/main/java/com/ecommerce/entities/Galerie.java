@@ -7,6 +7,7 @@ package com.ecommerce.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  *
@@ -53,7 +54,7 @@ public class Galerie {
         this.idGalerie = idGalerie;
     }
 
-    public Integer getIdGalerie() {
+    public Integer getGalerieId() {
         return idGalerie;
     }
 
@@ -81,5 +82,31 @@ public class Galerie {
     public String toString() {
         return "entities.Galerie[ idGalerie=" + idGalerie + " ]";
     }
-    
+
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
 }

@@ -2,6 +2,7 @@ package com.ecommerce.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  * Created by nawalti on 08/02/2016.
@@ -59,7 +60,7 @@ public class ProduitPropriete {
         this.idProduitPropriete = idProduitPropriete;
     }
 
-    public Integer getIdProduitPropriete() {
+    public Integer getProduitProprieteId() {
         return idProduitPropriete;
     }
 
@@ -88,4 +89,30 @@ public class ProduitPropriete {
         return "entities.ProduitPropriete[ idProduitPropriete=" + idProduitPropriete + " ]";
     }
 
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
 }

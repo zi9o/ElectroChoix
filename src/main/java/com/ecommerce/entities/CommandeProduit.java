@@ -2,6 +2,7 @@ package com.ecommerce.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  * Created by nawalti on 08/02/2016.
@@ -25,6 +26,33 @@ public class CommandeProduit {
     @ManyToOne
     @JoinColumn(name = "ID_COMMANDE")
     private Commande commande;
+
+    //
+    @Column(name = "DATE_CREATION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATECREATION;
+
+    @Column(name = "DATE_UPDATE ")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date DATEUPDATE ;
+
+    public Date getDATECREATION() {
+        return DATECREATION;
+    }
+
+    public void setDATECREATION(Date DATECREATION) {
+        this.DATECREATION = DATECREATION;
+    }
+
+    public Date getDATEUPDATE() {
+        return DATEUPDATE;
+    }
+
+    public void setDATEUPDATE(Date DATEUPDATE) {
+        this.DATEUPDATE = DATEUPDATE;
+    }
+
+    //
 
 //////////////
     @ManyToOne
@@ -58,7 +86,7 @@ public class CommandeProduit {
         this.idCommandeProduit = idCommandeProduit;
     }
 
-    public Integer getIdCommandeProduit() {
+    public Integer getCommandeProduitId() {
         return idCommandeProduit;
     }
 
