@@ -1,0 +1,282 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html"
+      layout:decorator="/templateClient">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+    <head>
+        <title>Spring Boot CRUD Example</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="page-content-wrapper">
+
+
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container">
+                        <!-- BEGIN PAGE BREADCRUMBS -->
+
+                        <!-- END PAGE BREADCRUMBS -->
+                        <!-- BEGIN PAGE CONTENT INNER -->
+
+
+
+                        <!-- BEGIN PAGE CONTENT BODY -->
+
+                                <!-- BEGIN PAGE BREADCRUMBS -->
+                                <ul class="page-breadcrumb breadcrumb">
+                                    <li>
+                                        <a href="index.html">Home</a>
+                                        <i class="fa fa-circle"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pages</a>
+                                        <i class="fa fa-circle"></i>
+                                    </li>
+                                    <li>
+                                        <a href="#">General</a>
+                                        <i class="fa fa-circle"></i>
+                                    </li>
+                                    <li>
+                                        <span>Portfolio</span>
+                                    </li>
+                                </ul>
+                                <!-- END PAGE BREADCRUMBS -->
+                                <!-- BEGIN PAGE CONTENT INNER -->
+
+                        <div class="search-page search-content-3">
+                            <div class="row" ng-controller="venteProduitController" ng-init="initProduit()">
+                                <!--<div class="col-lg-4">-->
+                                    <!--<div class="search-filter ">-->
+                                        <!--<div class="search-label uppercase">Search By</div>-->
+                                        <!--<div class="input-icon right">-->
+                                            <!--<i class="icon-magnifier"></i>-->
+                                            <!--<input type="text" class="form-control" placeholder="Filter by keywords"/> </div>-->
+                                        <!--<div class="search-label uppercase">Sort By</div>-->
+                                        <!--<select class="form-control">-->
+                                            <!--<option>Option 1</option>-->
+                                            <!--<option>Option 2</option>-->
+                                            <!--<option>Option 3</option>-->
+                                            <!--<option>Option 4</option>-->
+                                            <!--<option>Option 5</option>-->
+                                        <!--</select>-->
+                                        <!--<div class="search-label uppercase">Date</div>-->
+                                        <!--<div class="input-icon right">-->
+                                            <!--<i class="icon-calendar"></i>-->
+                                            <!--<input class="form-control date-picker" type="text" placeholder="Any Date" /> </div>-->
+                                        <!--<button class="btn green bold uppercase btn-block">Update Search Results</button>-->
+                                        <!--<div class="search-filter-divider bg-grey-steel"></div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<button class="btn grey bold uppercase btn-block">Reset Search</button>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-6">-->
+                                                <!--<button class="btn grey-cararra font-blue bold btn-block">Advanced Search</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-md-4"  ng-cloak="" ng-repeat='prod in produits'>
+                                            <div class="tile-container">
+                                                <div class="tile-thumbnail">
+                                                    <a href="javascript:;">
+                                                        <img th:src="@{/images/products/big/1.jpg}" />
+                                                    </a>
+                                                </div>
+                                                <div class="tile-title">
+                                                    <h3>
+                                                        <a href="javascript:;">{{prod.designation}}</a>
+                                                    </h3>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-question font-blue"></i>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-plus font-green-meadow"></i>
+                                                    </a>
+                                                    <div class="tile-desc">
+                                                        <p>Prix :
+                                                            <a href="javascript:;"></a> -
+                                                            <span class="font-grey-salt"><strong>{{prod.prix}} </strong> <em>DH</em></span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="tile-container">
+                                                <div class="tile-thumbnail">
+                                                    <a href="javascript:;">
+                                                        <img th:src="@{/images/products/big/2.jpg}" />
+                                                    </a>
+                                                </div>
+                                                <div class="tile-title">
+                                                    <h3>
+                                                        <a href="javascript:;">Mobile App</a>
+                                                    </h3>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-question font-blue"></i>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-plus font-green-meadow"></i>
+                                                    </a>
+                                                    <div class="tile-desc">
+                                                        <p>Prix :
+                                                            <a href="javascript:;"></a> -
+                                                            <span class="font-grey-salt">25 mins ago</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="tile-container">
+                                                <div class="tile-thumbnail">
+                                                    <a href="javascript:;">
+                                                        <img th:src="@{/images/products/big/3.jpg}" />
+                                                    </a>
+                                                </div>
+                                                <div class="tile-title">
+                                                    <h3>
+                                                        <a href="javascript:;">Mobile App</a>
+                                                    </h3>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-question font-blue"></i>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-plus font-green-meadow"></i>
+                                                    </a>
+                                                    <div class="tile-desc">
+                                                        <p>Prix :
+                                                            <a href="javascript:;"></a> -
+                                                            <span class="font-grey-salt">25 mins ago</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="tile-container">
+                                                <div class="tile-thumbnail">
+                                                    <a href="javascript:;">
+                                                        <img th:src="@{/images/products/big/4.jpg}" />
+                                                    </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </div>
+                                                <div class="tile-title">
+                                                    <h3>
+                                                        <a href="javascript:;">Mobile App</a>
+                                                    </h3>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-question font-blue"></i>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-plus font-green-meadow"></i>
+                                                    </a>
+                                                    <div class="tile-desc">
+                                                        <p>Prix :
+                                                            <a href="javascript:;"></a> -
+                                                            <span class="font-grey-salt">25 mins ago</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="tile-container">
+                                                <div class="tile-thumbnail">
+                                                    <a href="javascript:;">
+                                                        <img th:src="@{/images/products/big/2.jpg}" />
+                                                    </a>
+                                                </div>
+                                                <div class="tile-title">
+                                                    <h3>
+                                                        <a href="javascript:;">Mobile App</a>
+                                                    </h3>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-question font-blue"></i>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-plus font-green-meadow"></i>
+                                                    </a>
+                                                    <div class="tile-desc">
+                                                        <p>Prix :
+                                                            <a href="javascript:;"></a> -
+                                                            <span class="font-grey-salt">25 mins ago</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="tile-container">
+                                                <div class="tile-thumbnail">
+                                                    <a href="javascript:;">
+                                                        <img th:src="@{/images/products/big/2.jpg}" />
+                                                    </a>
+                                                </div>
+                                                <div class="tile-title">
+                                                    <h3>
+                                                        <a href="javascript:;">Mobile App</a>
+                                                    </h3>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-question font-blue"></i>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-plus font-green-meadow"></i>
+                                                    </a>
+                                                    <div class="tile-desc">
+                                                        <p>Prix :
+                                                            <a href="javascript:;"></a> -
+                                                            <span class="font-grey-salt">25 mins ago</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="search-pagination pagination-rounded">
+                                        <ul class="pagination">
+                                            <li class="page-active">
+                                                <a href="javascript:;"> 1 </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;"> 2 </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;"> 3 </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;"> 4 </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- END PAGE CONTENT INNER -->
+                            </div>
+                        </div>
+                        <!-- END PAGE CONTENT BODY -->
+
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </body>
+</html>
